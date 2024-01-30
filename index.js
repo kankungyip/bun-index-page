@@ -9,7 +9,7 @@ export default function IndexPage({ entry, template, filename = 'index.html', ..
 
       compileOption.entry = []
         .concat(entry)
-        .map((filepath) => `import("/${filepath}");`)
+        .map((filepath) => `import("${filepath}");`)
         .join('');
 
       const compile = handlebars.compile(await Bun.file(template).text());
